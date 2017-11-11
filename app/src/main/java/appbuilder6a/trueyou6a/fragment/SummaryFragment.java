@@ -5,19 +5,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import appbuilder6a.trueyou6a.R;
 
 
+public class SummaryFragment extends Fragment implements View.OnClickListener {
 
-public class FragmentTemplate extends Fragment {
+    private Button btnHistoryPage;
 
-    public FragmentTemplate() {
+    public SummaryFragment() {
         super();
     }
 
-    public static FragmentTemplate newInstance() {
-        FragmentTemplate fragment = new FragmentTemplate();
+    public static SummaryFragment newInstance() {
+        SummaryFragment fragment = new SummaryFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -26,13 +28,15 @@ public class FragmentTemplate extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_historys, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_summary, container, false);
         initInstances(rootView);
         return rootView;
     }
 
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
+        btnHistoryPage = rootView.findViewById(R.id.btnHistoryPage);
+        btnHistoryPage.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +66,15 @@ public class FragmentTemplate extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
             // Restore Instance State here
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == btnHistoryPage){
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.contentContainer, HistorysFragment.newInstance())
+                    .commit();
         }
     }
 }

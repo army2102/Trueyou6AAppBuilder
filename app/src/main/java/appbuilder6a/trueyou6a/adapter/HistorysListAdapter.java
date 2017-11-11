@@ -2,15 +2,20 @@ package appbuilder6a.trueyou6a.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 
+import appbuilder6a.trueyou6a.R;
 import appbuilder6a.trueyou6a.view.HistoryListItem;
 
 /**
  * Created by Naetirat on 11/9/2017.
  */
 
-public class HistoryListAdapter extends BaseAdapter {
+public class HistorysListAdapter extends BaseAdapter {
+    private int lastPosition = -1;
+
     @Override
     public int getCount() {
         return 10000;
@@ -34,6 +39,15 @@ public class HistoryListAdapter extends BaseAdapter {
         } else {
             item = new HistoryListItem(viewGroup.getContext());
         }
+
+
+        if (i > lastPosition) {
+            Animation anim = AnimationUtils.loadAnimation(viewGroup.getContext(),
+                    R.anim.up_from_bottom);
+            item.startAnimation(anim);
+            lastPosition = i;
+        }
+
         return item;
     }
 }

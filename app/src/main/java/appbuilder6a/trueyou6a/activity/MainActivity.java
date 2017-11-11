@@ -12,7 +12,10 @@ import android.view.View;
 import android.widget.Button;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.fragment.HistoryFragment;
+import appbuilder6a.trueyou6a.fragment.CouponFragment;
+import appbuilder6a.trueyou6a.fragment.DealsFragment;
+import appbuilder6a.trueyou6a.fragment.HistorysFragment;
+import appbuilder6a.trueyou6a.fragment.SummaryFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ActionBarDrawerToggle actionBarDrawerToggle;
     Button btnCouponPage;
     Button btnSummaryPage;
+    Button btnHistorysPage;
+    Button btnDealsPage;
+    Button btnLogout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +38,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentContainer, HistoryFragment.newInstance())
+                    .add(R.id.contentContainer, DealsFragment.newInstance())
                     .commit();
         }
 
         btnCouponPage.setOnClickListener(this);
         btnSummaryPage.setOnClickListener(this);
+        btnHistorysPage.setOnClickListener(this);
+        btnDealsPage.setOnClickListener(this);
+        btnLogout.setOnClickListener(this);
 
 
     }
@@ -46,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
         btnCouponPage = findViewById(R.id.btnCouponPage);
         btnSummaryPage = findViewById(R.id.btnSummaryPage);
+        btnHistorysPage = findViewById(R.id.btnHistorysPage);
+        btnDealsPage = findViewById(R.id.btnDealsPage);
+        btnLogout = findViewById(R.id.btnLogout);
 
         drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -87,10 +100,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == btnCouponPage) {
-
-
+//            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
+//            if (!(fragment instanceof CouponFragment)){
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.contentContainer, CouponFragment.newInstance())
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.from_right, R.anim.to_left,
+                            R.anim.from_left, R.anim.to_right
+                    )
+                    .replace(R.id.contentContainer, CouponFragment.newInstance())
+                    .commit();
         } else if (view == btnSummaryPage) {
-
+//            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
+//            if (!(fragment instanceof SummaryFragment)){
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.contentContainer, SummaryFragment.newInstance())
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.from_right, R.anim.to_left,
+                            R.anim.from_left, R.anim.to_right
+                    )
+                    .replace(R.id.contentContainer, SummaryFragment.newInstance())
+                    .commit();
+        } else if (view == btnHistorysPage) {
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.from_right, R.anim.to_left,
+                            R.anim.from_left, R.anim.to_right
+                    )
+                    .replace(R.id.contentContainer, HistorysFragment.newInstance())
+                    .commit();
+        } else if (view == btnDealsPage) {
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.from_right, R.anim.to_left,
+                            R.anim.from_left, R.anim.to_right
+                    )
+                    .replace(R.id.contentContainer, DealsFragment.newInstance())
+                    .commit();
+        }else if (view == btnLogout) {
+            finish();
         }
     }
 }

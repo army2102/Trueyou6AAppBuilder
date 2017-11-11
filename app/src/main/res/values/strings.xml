@@ -2,6 +2,6 @@
     <string name="app_name">Trueyou</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
-    <string name="name">Name Name Name Name Name Name Name Name Name Name Name Name Name</string>
-    <string name="description">Description Description Description Description Description Description Description Description Description Description Description</string>
+    <string name="name">Deal name</string>
+    <string name="description">Description</string>
 </resources>

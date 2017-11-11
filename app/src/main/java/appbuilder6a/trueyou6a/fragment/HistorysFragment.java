@@ -5,19 +5,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import appbuilder6a.trueyou6a.R;
+import appbuilder6a.trueyou6a.adapter.HistorysListAdapter;
 
 
+public class HistorysFragment extends Fragment {
 
-public class FragmentTemplate extends Fragment {
+    ListView listView;
 
-    public FragmentTemplate() {
+    public HistorysFragment() {
         super();
     }
 
-    public static FragmentTemplate newInstance() {
-        FragmentTemplate fragment = new FragmentTemplate();
+    public static HistorysFragment newInstance() {
+        HistorysFragment fragment = new HistorysFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -33,6 +36,10 @@ public class FragmentTemplate extends Fragment {
 
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
+        listView = rootView.findViewById(R.id.listView);
+        HistorysListAdapter historysListAdapter = new HistorysListAdapter();
+        listView.setAdapter(historysListAdapter);
+
     }
 
     @Override

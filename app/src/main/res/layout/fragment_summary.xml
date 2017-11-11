@@ -45,9 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/picture_cutepig" />
+        android:src="@drawable/mock_pig" />
 
     <Button
+        android:id="@+id/btnHistoryPage"
         style="@style/TextViewStyle.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,23 +1,26 @@
 package appbuilder6a.trueyou6a.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import appbuilder6a.trueyou6a.R;
+import appbuilder6a.trueyou6a.activity.MainActivity;
 
 
+public class RandomCouponFragment extends Fragment implements View.OnClickListener {
+    private Button btnConfirmCoupon;
 
-public class FragmentTemplate extends Fragment {
-
-    public FragmentTemplate() {
+    public RandomCouponFragment() {
         super();
     }
 
-    public static FragmentTemplate newInstance() {
-        FragmentTemplate fragment = new FragmentTemplate();
+    public static RandomCouponFragment newInstance() {
+        RandomCouponFragment fragment = new RandomCouponFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -26,13 +29,15 @@ public class FragmentTemplate extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_historys, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_random_coupon, container, false);
         initInstances(rootView);
         return rootView;
     }
 
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
+        btnConfirmCoupon = rootView.findViewById(R.id.btnConfirmCoupon);
+        btnConfirmCoupon.setOnClickListener(this);
     }
 
     @Override
@@ -63,5 +68,11 @@ public class FragmentTemplate extends Fragment {
         if (savedInstanceState != null) {
             // Restore Instance State here
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
     }
 }
