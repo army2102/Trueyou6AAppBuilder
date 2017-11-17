@@ -5,22 +5,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.adapter.HistorysListAdapter;
+import appbuilder6a.trueyou6a.adapter.DealsListAdapter;
 
 
-public class HistorysFragment extends Fragment {
+public class DealListFragment extends Fragment {
 
-    ListView listView;
+    private ListView listView;
 
-    public HistorysFragment() {
+    public DealListFragment() {
         super();
     }
 
-    public static HistorysFragment newInstance() {
-        HistorysFragment fragment = new HistorysFragment();
+    public static DealListFragment newInstance() {
+        DealListFragment fragment = new DealListFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -29,7 +30,7 @@ public class HistorysFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_historys, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_deal_list, container, false);
         initInstances(rootView);
         return rootView;
     }
@@ -37,9 +38,16 @@ public class HistorysFragment extends Fragment {
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
         listView = rootView.findViewById(R.id.listView);
-        HistorysListAdapter historysListAdapter = new HistorysListAdapter();
-        listView.setAdapter(historysListAdapter);
+        DealsListAdapter dealsListAdapter = new DealsListAdapter();
+        listView.setAdapter(dealsListAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Intent intent = new Intent(MarketListActivity.this, LockReservation.class);
+//                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -71,4 +79,6 @@ public class HistorysFragment extends Fragment {
             // Restore Instance State here
         }
     }
+
+
 }

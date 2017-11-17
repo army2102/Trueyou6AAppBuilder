@@ -73,7 +73,7 @@ public class SummaryFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if (view == btnHistoryPage){
             getFragmentManager().beginTransaction()
-                    .replace(R.id.contentContainer, HistorysFragment.newInstance())
+                    .replace(R.id.contentContainer, HistoryListFragment.newInstance())
                     .commit();
         }
     }

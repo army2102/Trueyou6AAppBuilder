@@ -8,20 +8,19 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.adapter.DealsListAdapter;
 import appbuilder6a.trueyou6a.adapter.HistorysListAdapter;
 
 
-public class DealsFragment extends Fragment {
+public class HistoryListFragment extends Fragment {
 
-    private ListView listView;
+    ListView listView;
 
-    public DealsFragment() {
+    public HistoryListFragment() {
         super();
     }
 
-    public static DealsFragment newInstance() {
-        DealsFragment fragment = new DealsFragment();
+    public static HistoryListFragment newInstance() {
+        HistoryListFragment fragment = new HistoryListFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -30,7 +29,7 @@ public class DealsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_deals, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_history_list, container, false);
         initInstances(rootView);
         return rootView;
     }
@@ -38,8 +37,9 @@ public class DealsFragment extends Fragment {
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
         listView = rootView.findViewById(R.id.listView);
-        DealsListAdapter dealsListAdapter = new DealsListAdapter();
-        listView.setAdapter(dealsListAdapter);
+        HistorysListAdapter historysListAdapter = new HistorysListAdapter();
+        listView.setAdapter(historysListAdapter);
+
     }
 
     @Override

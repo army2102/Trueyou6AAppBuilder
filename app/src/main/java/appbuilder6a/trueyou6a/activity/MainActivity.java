@@ -13,8 +13,8 @@ import android.widget.Button;
 
 import appbuilder6a.trueyou6a.R;
 import appbuilder6a.trueyou6a.fragment.CouponFragment;
-import appbuilder6a.trueyou6a.fragment.DealsFragment;
-import appbuilder6a.trueyou6a.fragment.HistorysFragment;
+import appbuilder6a.trueyou6a.fragment.DealListFragment;
+import appbuilder6a.trueyou6a.fragment.HistoryListFragment;
 import appbuilder6a.trueyou6a.fragment.SummaryFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentContainer, DealsFragment.newInstance())
+                    .add(R.id.contentContainer, DealListFragment.newInstance())
                     .commit();
         }
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             R.anim.from_right, R.anim.to_left,
                             R.anim.from_left, R.anim.to_right
                     )
-                    .replace(R.id.contentContainer, HistorysFragment.newInstance())
+                    .replace(R.id.contentContainer, HistoryListFragment.newInstance())
                     .commit();
         } else if (view == btnDealsPage) {
             getSupportFragmentManager().beginTransaction()
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             R.anim.from_right, R.anim.to_left,
                             R.anim.from_left, R.anim.to_right
                     )
-                    .replace(R.id.contentContainer, DealsFragment.newInstance())
+                    .replace(R.id.contentContainer, DealListFragment.newInstance())
                     .commit();
         }else if (view == btnLogout) {
             finish();

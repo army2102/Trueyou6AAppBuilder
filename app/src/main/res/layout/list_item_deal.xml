@@ -1,78 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/ivImg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mock_content" />
 
-            <ImageView
-                android:id="@+id/ivImg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/mock_content" />
+        <TextView
 
+            android:id="@+id/tvDiscount"
+            style="@style/TextViewStyle.Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_horizontal"
+            android:textSize="50sp" />
 
+        <TextView
+            android:id="@+id/tvDayDiscount"
+            style="@style/TextViewStyle.Button"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvDiscount"
+            android:gravity="center_horizontal"
+            android:textSize="50sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#80000000"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
-
-                android:id="@+id/tvDiscount"
-                style="@style/TextViewStyle.Button"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center_horizontal"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_below="@id/tvDiscount"
-                android:id="@+id/tvDayDiscount"
-                style="@style/TextViewStyle.Button"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:textSize="50sp" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="#80000000"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/name"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="@string/name"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/description"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    android:text="@string/description"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
+        </LinearLayout>
 
-            </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000" />
 
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
