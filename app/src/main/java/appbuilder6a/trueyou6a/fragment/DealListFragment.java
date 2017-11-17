@@ -1,5 +1,6 @@
 package appbuilder6a.trueyou6a.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import appbuilder6a.trueyou6a.R;
+import appbuilder6a.trueyou6a.activity.DealActivity;
 import appbuilder6a.trueyou6a.adapter.DealsListAdapter;
 
 
@@ -41,13 +43,8 @@ public class DealListFragment extends Fragment {
         DealsListAdapter dealsListAdapter = new DealsListAdapter();
         listView.setAdapter(dealsListAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(MarketListActivity.this, LockReservation.class);
-//                startActivity(intent);
-            }
-        });
+
+        listView.setOnItemClickListener(listViewItemClickListener);
     }
 
     @Override
@@ -79,6 +76,15 @@ public class DealListFragment extends Fragment {
             // Restore Instance State here
         }
     }
+
+    final AdapterView.OnItemClickListener listViewItemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            Intent intent = new Intent(getActivity(), DealActivity.class);
+            startActivity(intent);
+
+        }
+    };
 
 
 }

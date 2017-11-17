@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import appbuilder6a.trueyou6a.fragment.CouponFragment;
 import appbuilder6a.trueyou6a.fragment.DealListFragment;
 import appbuilder6a.trueyou6a.fragment.HistoryListFragment;
 import appbuilder6a.trueyou6a.fragment.SummaryFragment;
+import appbuilder6a.trueyou6a.view.DealListItem;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -88,14 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         actionBarDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
 
-    }
 
     @Override
     public void onClick(View view) {
@@ -149,4 +144,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             finish();
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
+
 }
