@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.fragment.DealFragment;
+import appbuilder6a.trueyou6a.fragment.DealInformationFragment;
 
 public class DealActivity extends AppCompatActivity {
 
@@ -14,12 +14,12 @@ public class DealActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deal);
+        setContentView(R.layout.activity_deal_information);
 
         initInstancecs();
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentContainer, DealFragment.newInstance())
+                    .add(R.id.contentContainer, DealInformationFragment.newInstance())
                     .commit();
         }
 

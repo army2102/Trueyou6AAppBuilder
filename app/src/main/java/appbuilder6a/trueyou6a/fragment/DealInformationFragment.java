@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 import appbuilder6a.trueyou6a.R;
 
 
-public class DealFragment extends Fragment {
+public class DealInformationFragment extends Fragment {
 
-    public DealFragment() {
+    public DealInformationFragment() {
         super();
     }
 
-    public static DealFragment newInstance() {
-        DealFragment fragment = new DealFragment();
+    public static DealInformationFragment newInstance() {
+        DealInformationFragment fragment = new DealInformationFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -25,7 +25,7 @@ public class DealFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_deal, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_deal_information, container, false);
         initInstances(rootView);
         return rootView;
     }

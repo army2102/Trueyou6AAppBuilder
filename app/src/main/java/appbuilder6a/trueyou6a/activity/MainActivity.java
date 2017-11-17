@@ -1,5 +1,6 @@
 package appbuilder6a.trueyou6a.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -155,10 +156,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
+        } else {
+            switch (item.getItemId()){
+                case R.id.actionSearch:
+                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+
+            return true;
         }
-        return super.onOptionsItemSelected(item);
+
 
     }
-
-
 }
