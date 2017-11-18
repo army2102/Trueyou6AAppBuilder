@@ -10,7 +10,7 @@
         android:id="@+id/ivImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/qrcode" />
+        android:src="@drawable/mock_qrcode" />
 
 
     <android.support.design.widget.BottomNavigationView
