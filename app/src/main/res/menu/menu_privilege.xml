@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:id="@+id/navigation_back"
+    android:icon="@drawable/ic_qrcode_black"
+    android:title="@string/title_qrcode" />
+
+<item
+    android:id="@+id/navigation_truepoint"
+    android:icon="@drawable/ic_onetwothree_black"
+    android:title="@string/title_onetwothree" />
+
+<item
+    android:id="@+id/navigation_saving"
+    android:icon="@drawable/ic_barcode_black"
+    android:title="@string/title_barcode" />
+
+</menu>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -92,56 +93,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     @Override
     public void onClick(View view) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
         if (view == btnCouponPage) {
-//            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
-//            if (!(fragment instanceof CouponFragment)){
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.contentContainer, CouponFragment.newInstance())
-//                        .addToBackStack(null)
-//                        .commit();
-//            }
-            getSupportFragmentManager().beginTransaction()
-                    .setCustomAnimations(
-                            R.anim.from_right, R.anim.to_left,
-                            R.anim.from_left, R.anim.to_right
-                    )
-                    .replace(R.id.contentContainer, CouponFragment.newInstance())
-                    .commit();
+            if (!(fragment instanceof CouponFragment)) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.from_right, R.anim.to_left,
+                                R.anim.from_left, R.anim.to_right
+                        )
+                        .replace(R.id.contentContainer, CouponFragment.newInstance())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+
         } else if (view == btnSummaryPage) {
-//            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
-//            if (!(fragment instanceof SummaryFragment)){
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.contentContainer, SummaryFragment.newInstance())
-//                        .addToBackStack(null)
-//                        .commit();
-//            }
-            getSupportFragmentManager().beginTransaction()
-                    .setCustomAnimations(
-                            R.anim.from_right, R.anim.to_left,
-                            R.anim.from_left, R.anim.to_right
-                    )
-                    .replace(R.id.contentContainer, SummaryFragment.newInstance())
-                    .commit();
+            if (!(fragment instanceof SummaryFragment)) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.from_right, R.anim.to_left,
+                                R.anim.from_left, R.anim.to_right
+                        )
+                        .replace(R.id.contentContainer, SummaryFragment.newInstance())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+
         } else if (view == btnHistorysPage) {
-            getSupportFragmentManager().beginTransaction()
-                    .setCustomAnimations(
-                            R.anim.from_right, R.anim.to_left,
-                            R.anim.from_left, R.anim.to_right
-                    )
-                    .replace(R.id.contentContainer, HistoryListFragment.newInstance())
-                    .commit();
+            if (!(fragment instanceof HistoryListFragment)) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.from_right, R.anim.to_left,
+                                R.anim.from_left, R.anim.to_right
+                        )
+                        .replace(R.id.contentContainer, HistoryListFragment.newInstance())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+
         } else if (view == btnDealsPage) {
-            getSupportFragmentManager().beginTransaction()
-                    .setCustomAnimations(
-                            R.anim.from_right, R.anim.to_left,
-                            R.anim.from_left, R.anim.to_right
-                    )
-                    .replace(R.id.contentContainer, DealListFragment.newInstance())
-                    .commit();
-        }else if (view == btnLogout) {
+            if (!(fragment instanceof DealListFragment)) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.from_right, R.anim.to_left,
+                                R.anim.from_left, R.anim.to_right
+                        )
+                        .replace(R.id.contentContainer, DealListFragment.newInstance())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+
+        } else if (view == btnLogout) {
             finish();
         }
     }
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         } else {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.actionSearch:
                     Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                     startActivity(intent);

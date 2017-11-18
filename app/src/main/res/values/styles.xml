@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -17,6 +17,10 @@
 
     <style name="TextViewStyle">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextViewStyle.ColorWhite">
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
     <style name="TextViewStyle.Header">

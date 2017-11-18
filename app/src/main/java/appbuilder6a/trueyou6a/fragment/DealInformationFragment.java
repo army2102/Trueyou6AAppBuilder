@@ -5,11 +5,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 
 import appbuilder6a.trueyou6a.R;
+import appbuilder6a.trueyou6a.fragment.Dialog.PrivilegeDialogFragment;
 
 
-public class DealInformationFragment extends Fragment {
+public class DealInformationFragment extends Fragment implements View.OnClickListener {
+
+    Button btnAcceptPrivilege1;
+    Button btnAcceptPrivilege2;
+    Button btnAcceptPrivilege3;
 
     public DealInformationFragment() {
         super();
@@ -32,6 +39,15 @@ public class DealInformationFragment extends Fragment {
 
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
+        btnAcceptPrivilege1 = rootView.findViewById(R.id.btnAcceptPrivilege1);
+        btnAcceptPrivilege2 = rootView.findViewById(R.id.btnAcceptPrivilege2);
+        btnAcceptPrivilege3 = rootView.findViewById(R.id.btnAcceptPrivilege3);
+
+        btnAcceptPrivilege1.setOnClickListener(this);
+        btnAcceptPrivilege2.setOnClickListener(this);
+        btnAcceptPrivilege3.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -62,5 +78,22 @@ public class DealInformationFragment extends Fragment {
         if (savedInstanceState != null) {
             // Restore Instance State here
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if (view == btnAcceptPrivilege1) {
+            PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
+            privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
+
+        } else if (view == btnAcceptPrivilege2) {
+            PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
+            privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
+        } else if (view == btnAcceptPrivilege3) {
+            PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
+            privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
+        }
+
     }
 }

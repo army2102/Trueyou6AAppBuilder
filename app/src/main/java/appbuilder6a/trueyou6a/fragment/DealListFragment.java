@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.activity.DealActivity;
+import appbuilder6a.trueyou6a.activity.DealInformationActivity;
 import appbuilder6a.trueyou6a.adapter.DealsListAdapter;
 
 
@@ -80,7 +80,7 @@ public class DealListFragment extends Fragment {
     final AdapterView.OnItemClickListener listViewItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            Intent intent = new Intent(getActivity(), DealActivity.class);
+            Intent intent = new Intent(getActivity(), DealInformationActivity.class);
             startActivity(intent);
 
         }

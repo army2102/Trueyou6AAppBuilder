@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:id="@+id/navigation_back"
+    android:icon="@drawable/ic_back_black"
+    android:title="@string/title_back" />
+
+<item
+    android:id="@+id/navigation_truepoint"
+    android:icon="@drawable/ic_truepoint_black"
+    android:title="@string/title_truepoint" />
+
+<item
+    android:id="@+id/navigation_saving"
+    android:icon="@drawable/ic_saving_black"
+    android:title="@string/title_saving" />
+
+</menu>
