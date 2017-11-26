@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="appbuilder6a.trueyou6a.activity.CouponActivity">
+    tools:context="appbuilder6a.trueyou6a.activity.GachaponDiscountDisplayActivity">
 
     <FrameLayout
         android:id="@+id/contentContainer"

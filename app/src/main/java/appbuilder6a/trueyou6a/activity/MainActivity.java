@@ -15,11 +15,12 @@ import android.view.View;
 import android.widget.Button;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.fragment.CouponFragment;
+import appbuilder6a.trueyou6a.TrueyouApplication;
+import appbuilder6a.trueyou6a.fragment.DealCollectionFragment;
+import appbuilder6a.trueyou6a.fragment.GachaponFragment;
 import appbuilder6a.trueyou6a.fragment.DealListFragment;
 import appbuilder6a.trueyou6a.fragment.HistoryListFragment;
 import appbuilder6a.trueyou6a.fragment.SummaryFragment;
-import appbuilder6a.trueyou6a.view.DealListItem;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnSummaryPage;
     Button btnHistorysPage;
     Button btnDealsPage;
-    Button btnLogout;
+    Button btnCollectionPage;
+//    Button btnLogout;
 
 
     @Override
@@ -40,29 +42,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initInstances();
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentContainer, DealListFragment.newInstance())
-                    .commit();
-        }
 
-        btnCouponPage.setOnClickListener(this);
-        btnSummaryPage.setOnClickListener(this);
-        btnHistorysPage.setOnClickListener(this);
-        btnDealsPage.setOnClickListener(this);
-        btnLogout.setOnClickListener(this);
+        if (savedInstanceState == null) {
+            if (TrueyouApplication.pageStatus == 1) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.contentContainer, DealCollectionFragment.newInstance())
+                        .commit();
+                TrueyouApplication.pageStatus = 0;
+            } else {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.contentContainer, DealListFragment.newInstance())
+                        .commit();
+            }
+
+        }
 
 
     }
 
     private void initInstances() {
+        setTitle("");
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         btnCouponPage = findViewById(R.id.btnCouponPage);
         btnSummaryPage = findViewById(R.id.btnSummaryPage);
         btnHistorysPage = findViewById(R.id.btnHistorysPage);
         btnDealsPage = findViewById(R.id.btnDealsPage);
-        btnLogout = findViewById(R.id.btnLogout);
+        btnCollectionPage = findViewById(R.id.btnCollectionPage);
+//        btnLogout = findViewById(R.id.btnLogout);
+
+        btnCouponPage.setOnClickListener(this);
+        btnSummaryPage.setOnClickListener(this);
+        btnHistorysPage.setOnClickListener(this);
+        btnDealsPage.setOnClickListener(this);
+        btnCollectionPage.setOnClickListener(this);
+//        btnLogout.setOnClickListener(this);
 
         drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -74,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         );
 
         //TODO setDrawer
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -97,13 +111,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
         if (view == btnCouponPage) {
-            if (!(fragment instanceof CouponFragment)) {
+            if (!(fragment instanceof GachaponFragment)) {
                 getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(
                                 R.anim.from_right, R.anim.to_left,
                                 R.anim.from_left, R.anim.to_right
                         )
-                        .replace(R.id.contentContainer, CouponFragment.newInstance())
+                        .replace(R.id.contentContainer, GachaponFragment.newInstance())
                         .commit();
                 drawerLayout.closeDrawers();
             }
@@ -144,9 +158,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 drawerLayout.closeDrawers();
             }
 
-        } else if (view == btnLogout) {
-            finish();
-        }
+        } else if (view == btnCollectionPage) {
+            if (!(fragment instanceof DealCollectionFragment)) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.from_right, R.anim.to_left,
+                                R.anim.from_left, R.anim.to_right
+                        )
+                        .replace(R.id.contentContainer, DealCollectionFragment.newInstance())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+
+        } //TODO: Login / Logout
+//        else if (view == btnLogout) {
+//            finish();
+//        }
     }
 
     @Override

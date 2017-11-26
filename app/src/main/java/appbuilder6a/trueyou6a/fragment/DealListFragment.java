@@ -3,11 +3,13 @@ package appbuilder6a.trueyou6a.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import appbuilder6a.trueyou6a.R;
 import appbuilder6a.trueyou6a.activity.DealInformationActivity;
@@ -80,8 +82,20 @@ public class DealListFragment extends Fragment {
     final AdapterView.OnItemClickListener listViewItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            Intent intent = new Intent(getActivity(), DealInformationActivity.class);
-            startActivity(intent);
+            if (i % 5 == 0) {
+                Log.d("DealList", "0 At position: " + i);
+                Intent intent = new Intent(getActivity(), DealInformationActivity.class);
+                startActivity(intent);
+            } else if (i % 5 == 1) {
+                Log.d("DealList", "1 At position: " + i);
+            } else if (i % 5 == 2) {
+                Log.d("DealList", "2 At position: " + i);
+            } else if (i % 5 == 3) {
+                Log.d("DealList", "3 At position: " + i);
+            } else if (i % 5 == 4) {
+                Log.d("DealList", "4 At position: " + i);
+            }
+
 
         }
     };

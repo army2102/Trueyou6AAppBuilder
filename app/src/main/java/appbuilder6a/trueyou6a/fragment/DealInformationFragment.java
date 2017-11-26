@@ -14,9 +14,8 @@ import appbuilder6a.trueyou6a.fragment.Dialog.PrivilegeDialogFragment;
 
 public class DealInformationFragment extends Fragment implements View.OnClickListener {
 
-    Button btnAcceptPrivilege1;
-    Button btnAcceptPrivilege2;
-    Button btnAcceptPrivilege3;
+    Button btnAcceptPrivilege;
+
 
     public DealInformationFragment() {
         super();
@@ -39,13 +38,9 @@ public class DealInformationFragment extends Fragment implements View.OnClickLis
 
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
-        btnAcceptPrivilege1 = rootView.findViewById(R.id.btnAcceptPrivilege1);
-        btnAcceptPrivilege2 = rootView.findViewById(R.id.btnAcceptPrivilege2);
-        btnAcceptPrivilege3 = rootView.findViewById(R.id.btnAcceptPrivilege3);
+        btnAcceptPrivilege = rootView.findViewById(R.id.btnAcceptPrivilege);
+        btnAcceptPrivilege.setOnClickListener(this);
 
-        btnAcceptPrivilege1.setOnClickListener(this);
-        btnAcceptPrivilege2.setOnClickListener(this);
-        btnAcceptPrivilege3.setOnClickListener(this);
 
 
     }
@@ -83,17 +78,10 @@ public class DealInformationFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        if (view == btnAcceptPrivilege1) {
+        if (view == btnAcceptPrivilege) {
             PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
             privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
 
-        } else if (view == btnAcceptPrivilege2) {
-            PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
-            privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
-        } else if (view == btnAcceptPrivilege3) {
-            PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
-            privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
         }
-
     }
 }

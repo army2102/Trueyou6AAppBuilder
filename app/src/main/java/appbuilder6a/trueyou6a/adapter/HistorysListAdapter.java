@@ -18,7 +18,7 @@ public class HistorysListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 10000;
+        return 3;
     }
 
     @Override
@@ -34,10 +34,36 @@ public class HistorysListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         HistoryListItem item;
-        if (view != null) {
-            item = (HistoryListItem) view;
+        if (i == 0) {
+            if (view != null) {
+                item = (HistoryListItem) view;
+            } else {
+                item = new HistoryListItem(viewGroup.getContext());
+                item.setIvHistoryListItemDealContent(R.drawable.mock_deal_content_movie);
+                item.setTvHistoryListItemDealName("Major Cineplex");
+                item.setTvHistoryListItemDealDescription("ลูกค้าทรู รับส่วนลดตั๋วภาพยนต์ Justice League สูงสุด 30%");
+            }
+
+        } else if (i == 1) {
+            if (view != null) {
+                item = (HistoryListItem) view;
+            } else {
+                item = new HistoryListItem(viewGroup.getContext());
+                item.setIvHistoryListItemDealContent(R.drawable.mock_deal_content_food);
+                item.setTvHistoryListItemDealName("ปิ้งย่าง Paradise");
+                item.setTvHistoryListItemDealDescription("ลูกค้าทรู BlackCard รับส่วนลดสูงสุด 20%");
+            }
+
         } else {
-            item = new HistoryListItem(viewGroup.getContext());
+            if (view != null) {
+                item = (HistoryListItem) view;
+            } else {
+                item = new HistoryListItem(viewGroup.getContext());
+                item.setIvHistoryListItemDealContent(R.drawable.mock_deal_content_coffee);
+                item.setTvHistoryListItemDealName("COFFEE HAROCK");
+                item.setTvHistoryListItemDealDescription("ลูกค้าทรู BlackCard รับส่วนลดสูงสุด 90%");
+            }
+
         }
 
 

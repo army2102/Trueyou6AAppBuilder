@@ -2,8 +2,6 @@
     <string name="app_name">Trueyou</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
-    <string name="name">Deal name</string>
-    <string name="description">Description</string>
     <string name="title_activity_maps">Map</string>
     <string name="mock_disscription">ลูกค้าทรู BlackCard รับส่วนลดกาแฟสูงสุด 90 % เมื่อรับประทานอาหารภายในร้านค้า *เฉพาะเมนูที่ร่วมรายการ*</string>
     <string name="title_back">back</string>

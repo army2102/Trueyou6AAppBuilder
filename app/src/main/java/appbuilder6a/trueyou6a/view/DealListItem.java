@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
 
 import com.inthecheesefactory.thecheeselibrary.view.BaseCustomViewGroup;
 import com.inthecheesefactory.thecheeselibrary.view.state.BundleSavedState;
@@ -16,21 +18,68 @@ import appbuilder6a.trueyou6a.R;
 
 public class DealListItem extends BaseCustomViewGroup {
 
-    private ImageView ivImg;
-    private TextView tvDiscount;
-    private TextView tvDayDiscount;
+    private ImageView ivCustomViewGroupDealContent;
+    private ImageView ivCustomViewGroupIconDealType;
+    private ImageView ivCustomViewGroupIconRedCard;
+    private ImageView ivCustomViewGroupIconBlackCard;
+    private TextView tvCustomViewGroupDealType;
+    private TextView tvCustomViewGroupDiscountPrice;
+    private TextView tvCustomViewGroupDealName;
+    private TextView tvCustomViewGroupDescription;
+    private TextView tvCustomViewGroupDealLockDay;
+    private TextView tvCustomViewGroupDealLockDescription;
+    private LinearLayout linearLayoutCustomViewGroupSectionDealInformation;
 
-    public void setIvImg(Integer resourseId) {
-        this.ivImg.setImageResource(resourseId);
+    public void setTvCustomViewGroupDealLockDay(String text) {
+        linearLayoutCustomViewGroupSectionDealInformation.setVisibility(INVISIBLE);
+        this.tvCustomViewGroupDealLockDay.setVisibility(VISIBLE);
+        this.tvCustomViewGroupDealLockDay.setText(text);
     }
 
-    public void setTvDiscount(String value) {
-        this.tvDiscount.setText(value);
+    public void setTvCustomViewGroupDealLockDescription(String text) {
+        linearLayoutCustomViewGroupSectionDealInformation.setVisibility(INVISIBLE);
+        this.tvCustomViewGroupDealLockDescription.setVisibility(VISIBLE);
+        this.tvCustomViewGroupDealLockDescription.setText(text);
     }
 
-    public void setTvDayDiscount(String value) {
-        this.tvDayDiscount.setText(value);
+    public void setIvCustomViewGroupDealContent(Integer imageID) {
+        this.ivCustomViewGroupDealContent.setImageResource(imageID);
     }
+
+    public void setIvCustomViewGroupIconDealType(Integer imageID) {
+        this.ivCustomViewGroupIconDealType.setImageResource(imageID);
+    }
+
+    public void setIvCustomViewGroupIconRedCard(boolean isOn) {
+        if (isOn)
+            this.ivCustomViewGroupIconRedCard.setVisibility(VISIBLE);
+        else
+            this.ivCustomViewGroupIconRedCard.setVisibility(INVISIBLE);
+    }
+
+    public void setIvCustomViewGroupIconBlackCard(boolean isOn) {
+        if (isOn)
+            this.ivCustomViewGroupIconBlackCard.setVisibility(VISIBLE);
+        else
+            this.ivCustomViewGroupIconBlackCard.setVisibility(INVISIBLE);
+    }
+
+    public void setTvCustomViewGroupDealType(String text) {
+        this.tvCustomViewGroupDealType.setText(text);
+    }
+
+    public void setTvCustomViewGroupDiscountPrice(String text) {
+        this.tvCustomViewGroupDiscountPrice.setText(text);
+    }
+
+    public void setTvCustomViewGroupDealName(String text) {
+        this.tvCustomViewGroupDealName.setText(text);
+    }
+
+    public void setTvCustomViewGroupDescription(String text) {
+        this.tvCustomViewGroupDescription.setText(text);
+    }
+
 
     public DealListItem(Context context) {
         super(context);
@@ -66,9 +115,17 @@ public class DealListItem extends BaseCustomViewGroup {
 
     private void initInstances() {
         // findViewById here
-        ivImg = findViewById(R.id.ivImg);
-        tvDiscount = findViewById(R.id.tvDiscount);
-        tvDayDiscount = findViewById(R.id.tvDayDiscount);
+        ivCustomViewGroupDealContent = findViewById(R.id.ivCustomViewGroupDealContent);
+        ivCustomViewGroupIconDealType = findViewById(R.id.ivCustomViewGroupIconDealType);
+        ivCustomViewGroupIconRedCard = findViewById(R.id.ivCustomViewGroupIconRedCard);
+        ivCustomViewGroupIconBlackCard = findViewById(R.id.ivCustomViewGroupIconBlackCard);
+        tvCustomViewGroupDealType = findViewById(R.id.tvCustomViewGroupDealType);
+        tvCustomViewGroupDiscountPrice = findViewById(R.id.tvCustomViewGroupDiscountPrice);
+        tvCustomViewGroupDealName = findViewById(R.id.tvCustomViewGroupDealName);
+        tvCustomViewGroupDescription = findViewById(R.id.tvCustomViewGroupDescription);
+        tvCustomViewGroupDealLockDay = findViewById(R.id.tvCustomViewGroupDealLockDay);
+        tvCustomViewGroupDealLockDescription = findViewById(R.id.tvCustomViewGroupDealLockDescription);
+        linearLayoutCustomViewGroupSectionDealInformation = findViewById(R.id.linearLayoutCustomViewGroupSectionDealInformation);
     }
 
     private void initWithAttrs(AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -110,7 +167,8 @@ public class DealListItem extends BaseCustomViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height = width * 2 / 3;
+        int height = width * 2 / 5;
+//        int height = width * 2 / 4;
         int newHieightMeasureSpec = MeasureSpec.makeMeasureSpec(
                 height,
                 MeasureSpec.EXACTLY

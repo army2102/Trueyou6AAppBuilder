@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/background_overlay">
+
+    <ImageView
+        android:id="@+id/ivGetDivcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/mock_anim_gachapon_get_discount" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDealSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            style="@style/TextViewStyle.ColorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ขอแสดงความยินดีด้วย"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textStyle="bold"
+            style="@style/TextViewStyle.ColorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="คุณได้รับดีลฟรี"
+            android:textSize="50sp"
+            android:padding="@dimen/padding"
+      />
+
+        <appbuilder6a.trueyou6a.view.DealListItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#FFF">
+
+                <ImageView
+                    android:id="@+id/ivKeepDeal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/padding"
+                    android:src="@drawable/ic_discount_keep_deal" />
+
+            </FrameLayout>
+
+
+            <Button
+                android:id="@+id/btnUseDeal"
+                style="@style/TextViewStyle.Button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#f5bb2b"
+                android:text="ใช้เลย" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

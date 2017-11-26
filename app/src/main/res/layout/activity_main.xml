@@ -23,6 +23,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+
         <FrameLayout
             android:id="@+id/contentContainer"
             android:layout_width="match_parent"
@@ -53,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Coupons" />
+            android:text="Gachapon" />
 
         <Button
             android:id="@+id/btnSummaryPage"
@@ -71,18 +72,26 @@
             android:layout_marginBottom="8dp"
             android:text="Historys" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-
         <Button
-            android:id="@+id/btnLogout"
+            android:id="@+id/btnCollectionPage"
             style="@style/TextViewStyle.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Logout" />
+            android:text="Collection" />
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnLogout"-->
+            <!--style="@style/TextViewStyle.Button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:text="Logout" />-->
 
     </LinearLayout>
 

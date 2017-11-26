@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.inthecheesefactory.thecheeselibrary.view.BaseCustomViewGroup;
 import com.inthecheesefactory.thecheeselibrary.view.state.BundleSavedState;
@@ -12,8 +14,22 @@ import com.inthecheesefactory.thecheeselibrary.view.state.BundleSavedState;
 import appbuilder6a.trueyou6a.R;
 
 
-
 public class HistoryListItem extends BaseCustomViewGroup {
+    private ImageView ivHistoryListItemDealContent;
+    private TextView tvHistoryListItemDealName;
+    private TextView tvHistoryListItemDealDescription;
+
+    public void setIvHistoryListItemDealContent(Integer imageId) {
+        this.ivHistoryListItemDealContent.setImageResource(imageId);
+    }
+
+    public void setTvHistoryListItemDealName(String text) {
+        this.tvHistoryListItemDealName.setText(text);
+    }
+
+    public void setTvHistoryListItemDealDescription(String text) {
+        this.tvHistoryListItemDealDescription.setText(text);
+    }
 
     public HistoryListItem(Context context) {
         super(context);
@@ -49,6 +65,9 @@ public class HistoryListItem extends BaseCustomViewGroup {
 
     private void initInstances() {
         // findViewById here
+        ivHistoryListItemDealContent = findViewById(R.id.ivHistoryListItemDealContent);
+        tvHistoryListItemDealName = findViewById(R.id.tvHistoryListItemDealName);
+        tvHistoryListItemDealDescription = findViewById(R.id.tvHistoryListItemDealDescription);
     }
 
     private void initWithAttrs(AttributeSet attrs, int defStyleAttr, int defStyleRes) {

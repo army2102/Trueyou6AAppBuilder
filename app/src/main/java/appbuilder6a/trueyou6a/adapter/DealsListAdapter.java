@@ -35,12 +35,12 @@ public class DealsListAdapter extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
-        return position % 2 == 0 ? 0 : 1;
+        return position % 5;
     }
 
     @Override
     public int getViewTypeCount() {
-        return 2;
+        return 5;
     }
 
     @Override
@@ -51,7 +51,62 @@ public class DealsListAdapter extends BaseAdapter {
                 item = (DealListItem) view;
             } else {
                 item = new DealListItem(viewGroup.getContext());
-                item.setTvDayDiscount("15%");
+                item.setIvCustomViewGroupDealContent(R.drawable.mock_deal_content_coffee);
+                item.setIvCustomViewGroupIconBlackCard(true);
+                item.setIvCustomViewGroupIconRedCard(true);
+                item.setIvCustomViewGroupIconDealType(R.drawable.ic_discount_type_food);
+                item.setTvCustomViewGroupDealType("รับส่วนลด");
+                item.setTvCustomViewGroupDiscountPrice("50%");
+                item.setTvCustomViewGroupDealName("COFFEE HAROCK");
+                item.setTvCustomViewGroupDescription("ลูกค้าทรู BlackCard รับส่วนลดสูงสุด 90%");
+            }
+
+        } else if (getItemViewType(i) == 1) {
+            if (view != null) {
+                item = (DealListItem) view;
+            } else {
+                item = new DealListItem(viewGroup.getContext());
+                item.setIvCustomViewGroupDealContent(R.drawable.mock_deal_content_coffee);
+                item.setIvCustomViewGroupIconBlackCard(true);
+                item.setIvCustomViewGroupIconRedCard(true);
+                item.setIvCustomViewGroupIconDealType(R.drawable.ic_discount_type_food);
+                item.setTvCustomViewGroupDealType("รับฟรี");
+                item.setTvCustomViewGroupDiscountPrice("1แถม1");
+                item.setTvCustomViewGroupDealName("COFFEE HAROCK");
+                item.setTvCustomViewGroupDescription("ลูกค้าทรู BlackCard รับส่วนลดสูงสุด 90%");
+            }
+
+        } else if (getItemViewType(i) == 2) {
+            if (view != null) {
+                item = (DealListItem) view;
+            } else {
+                item = new DealListItem(viewGroup.getContext());
+                item.setIvCustomViewGroupDealContent(R.color.background_lock);
+                item.setTvCustomViewGroupDealLockDay("Monday deal");
+                item.setTvCustomViewGroupDealLockDescription("นี่คือดีลสุดพิเศษสำหรับวันถัดไป กลับมาอีกครั้งวันพรุ่งนี้\n" +
+                        "เพื่อสำรวจดีลใหม่ๆ");
+                item.setIvCustomViewGroupIconBlackCard(false);
+                item.setIvCustomViewGroupIconRedCard(false);
+                item.setIvCustomViewGroupIconDealType(R.drawable.ic_discount_type_travel);
+                item.setTvCustomViewGroupDealType("รับส่วนลด");
+                item.setTvCustomViewGroupDiscountPrice("90%");
+                item.setTvCustomViewGroupDealName("");
+                item.setTvCustomViewGroupDescription("");
+            }
+
+        } else if (getItemViewType(i) == 3) {
+            if (view != null) {
+                item = (DealListItem) view;
+            } else {
+                item = new DealListItem(viewGroup.getContext());
+                item.setIvCustomViewGroupDealContent(R.drawable.mock_deal_content_movie);
+                item.setIvCustomViewGroupIconBlackCard(false);
+                item.setIvCustomViewGroupIconRedCard(false);
+                item.setIvCustomViewGroupIconDealType(R.drawable.ic_discount_type_movie);
+                item.setTvCustomViewGroupDealType("รับส่วนลด");
+                item.setTvCustomViewGroupDiscountPrice("30%");
+                item.setTvCustomViewGroupDealName("Major Cineplex");
+                item.setTvCustomViewGroupDescription("ลูกค้าทรู รับส่วนลดตั๋วภาพยนต์ Justice League สูงสุด 30%");
             }
 
         } else {
@@ -59,10 +114,16 @@ public class DealsListAdapter extends BaseAdapter {
                 item = (DealListItem) view;
             } else {
                 item = new DealListItem(viewGroup.getContext());
-                item.setIvImg(R.drawable.mock_lock2);
-                item.setTvDiscount("80%");
-                item.setTvDayDiscount("M");
+                item.setIvCustomViewGroupDealContent(R.drawable.mock_deal_content_food);
+                item.setIvCustomViewGroupIconBlackCard(true);
+                item.setIvCustomViewGroupIconRedCard(true);
+                item.setIvCustomViewGroupIconDealType(R.drawable.ic_discount_type_food);
+                item.setTvCustomViewGroupDealType("รับส่วนลด");
+                item.setTvCustomViewGroupDiscountPrice("20%");
+                item.setTvCustomViewGroupDealName("ปิ้งย่าง Paradise");
+                item.setTvCustomViewGroupDescription("ลูกค้าทรู BlackCard รับส่วนลดสูงสุด 20%");
             }
+
         }
 
         if (i > lastPosition) {

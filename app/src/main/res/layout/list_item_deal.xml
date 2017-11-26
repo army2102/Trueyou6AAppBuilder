@@ -7,65 +7,175 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ImageView
-            android:id="@+id/ivImg"
+            android:id="@+id/ivCustomViewGroupDealContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/mock_content" />
+            android:layout_toRightOf="@+id/sectionDiscount"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mock_deal_content_coffee" />
 
         <TextView
-
-            android:id="@+id/tvDiscount"
-            style="@style/TextViewStyle.Button"
-            android:layout_width="100dp"
+            android:id="@+id/tvCustomViewGroupDealLockDay"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center_horizontal"
-            android:textSize="50sp" />
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/sectionDiscount"
+            android:gravity="center"
+            android:text="Monday Deal"
+            android:textColor="#FFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
         <TextView
-            android:id="@+id/tvDayDiscount"
-            style="@style/TextViewStyle.Button"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_below="@id/tvDiscount"
-            android:gravity="center_horizontal"
-            android:textSize="50sp" />
+            android:id="@+id/tvCustomViewGroupDealLockDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCustomViewGroupDealLockDay"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/sectionDiscount"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/padding"
+            android:text="Monday Deal"
+            android:textColor="#FFF"
+            android:textSize="14sp"
+            android:visibility="invisible" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#80000000"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:id="@+id/sectionDiscount"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
 
             <TextView
+                android:id="@+id/tvCustomViewGroupDealType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/name"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:gravity="center"
+                android:text="รับส่วนลด"
+                android:textColor="#FFF"
+                android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/tvCustomViewGroupDiscountPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/description"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:gravity="center"
+                android:text="50%"
+                android:textColor="#FFF"
+                android:textSize="30sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <ImageView
+                    android:id="@+id/ivCustomViewGroupIconDealType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:src="@drawable/ic_discount_type_food" />
+
+                <ImageView
+                    android:id="@+id/ivCustomViewGroupIconRedCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_redcard" />
+
+                <ImageView
+                    android:id="@+id/ivCustomViewGroupIconBlackCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_blackcard" />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-        <View
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCustomViewGroupSectionDealInformation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/selector_overlay" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/sectionDiscount"
+            android:background="@color/background_overlay"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCustomViewGroupDealName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="COFFEE HAROCK"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvCustomViewGroupDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="ลูกค้าทรู BlackCard รับส่วนลดสูงสุด 90%"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/ic_watch" />
+
+            <TextView
+                style="@style/TextViewStyle.ColorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="24:00"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
