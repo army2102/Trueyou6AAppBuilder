@@ -161,17 +161,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="16dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="12dp"
                 android:src="@drawable/ic_watch" />
 
             <TextView
                 style="@style/TextViewStyle.ColorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
                 android:text="24:00"
-                android:textSize="18sp" />
+                android:textSize="10sp" />
 
 
         </LinearLayout>
