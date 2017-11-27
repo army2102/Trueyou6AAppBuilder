@@ -9,6 +9,7 @@ import android.widget.Button;
 
 
 import appbuilder6a.trueyou6a.R;
+import appbuilder6a.trueyou6a.fragment.Dialog.DealInformationPrivilegeDialogFragment;
 import appbuilder6a.trueyou6a.fragment.Dialog.PrivilegeDialogFragment;
 
 
@@ -79,8 +80,8 @@ public class DealInformationFragment extends Fragment implements View.OnClickLis
     public void onClick(View view) {
 
         if (view == btnAcceptPrivilege) {
-            PrivilegeDialogFragment privilegeDialogFragment = new PrivilegeDialogFragment();
-            privilegeDialogFragment.show(getFragmentManager(), "privilegeDialogFragment");
+            DealInformationPrivilegeDialogFragment dialog = new DealInformationPrivilegeDialogFragment();
+            dialog.show(getFragmentManager(), "DealInformationFragment");
 
         }
     }

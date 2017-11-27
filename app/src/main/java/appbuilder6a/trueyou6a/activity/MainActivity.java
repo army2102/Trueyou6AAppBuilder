@@ -17,8 +17,8 @@ import android.widget.Button;
 import appbuilder6a.trueyou6a.R;
 import appbuilder6a.trueyou6a.TrueyouApplication;
 import appbuilder6a.trueyou6a.fragment.DealCollectionFragment;
-import appbuilder6a.trueyou6a.fragment.GachaponFragment;
 import appbuilder6a.trueyou6a.fragment.DealListFragment;
+import appbuilder6a.trueyou6a.fragment.GachaponFragment;
 import appbuilder6a.trueyou6a.fragment.HistoryListFragment;
 import appbuilder6a.trueyou6a.fragment.SummaryFragment;
 
@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (TrueyouApplication.pageStatus == 1) {
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.contentContainer, DealCollectionFragment.newInstance())
+                        .commit();
+                TrueyouApplication.pageStatus = 0;
+            } else if (TrueyouApplication.pageStatus == 2) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.contentContainer, GachaponFragment.newInstance())
                         .commit();
                 TrueyouApplication.pageStatus = 0;
             } else {

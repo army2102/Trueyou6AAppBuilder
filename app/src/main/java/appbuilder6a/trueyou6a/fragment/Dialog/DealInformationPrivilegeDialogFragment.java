@@ -3,21 +3,20 @@ package appbuilder6a.trueyou6a.fragment.Dialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import appbuilder6a.trueyou6a.R;
+import appbuilder6a.trueyou6a.fragment.DealInformationLayoutOverlay;
 
 
-public class PrivilegeDialogFragment extends DialogFragment {
+public class DealInformationPrivilegeDialogFragment extends DialogFragment {
     private ImageView ivCodeImage;
     private TextView tvOneTwoThree;
     private BottomNavigationView navigation;
@@ -68,6 +67,9 @@ public class PrivilegeDialogFragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 dismiss();
+                getFragmentManager().beginTransaction()
+                        .add(R.id.contentContainer, DealInformationLayoutOverlay.newInstance())
+                        .commit();
             }
         });
 

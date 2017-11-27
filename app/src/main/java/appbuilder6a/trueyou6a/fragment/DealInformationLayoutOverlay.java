@@ -1,27 +1,27 @@
 package appbuilder6a.trueyou6a.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ImageView;
 
 import appbuilder6a.trueyou6a.R;
-import appbuilder6a.trueyou6a.adapter.HistorysListAdapter;
+import appbuilder6a.trueyou6a.TrueyouApplication;
+import appbuilder6a.trueyou6a.activity.MainActivity;
 
 
-public class SummaryFragment extends Fragment {
+public class DealInformationLayoutOverlay extends Fragment implements View.OnClickListener {
+    private ImageView ivCoinHeart;
 
-
-    private ListView listView;
-
-    public SummaryFragment() {
+    public DealInformationLayoutOverlay() {
         super();
     }
 
-    public static SummaryFragment newInstance() {
-        SummaryFragment fragment = new SummaryFragment();
+    public static DealInformationLayoutOverlay newInstance() {
+        DealInformationLayoutOverlay fragment = new DealInformationLayoutOverlay();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -30,17 +30,15 @@ public class SummaryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_summary, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_deal_information_layout_overlay, container, false);
         initInstances(rootView);
         return rootView;
     }
 
     private void initInstances(View rootView) {
         // Init 'View' instance(s) with rootView.findViewById here
-        listView = rootView.findViewById(R.id.listView);
-        HistorysListAdapter historysListAdapter = new HistorysListAdapter();
-        listView.setAdapter(historysListAdapter);
-
+        ivCoinHeart = rootView.findViewById(R.id.ivCoinHeart);
+        ivCoinHeart.setOnClickListener(this);
     }
 
     @Override
@@ -73,5 +71,11 @@ public class SummaryFragment extends Fragment {
         }
     }
 
-
+    @Override
+    public void onClick(View view) {
+        TrueyouApplication.pageStatus = 2;
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    }
 }

@@ -3,10 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TheCheeseLibrary/TheCheeseLibrary.iml" filepath="$PROJECT_DIR$/TheCheeseLibrary/TheCheeseLibrary.iml" />
+      <module fileurl="file://C:\Users\Naetirat\AndroidStudioProjects\Project\Trueyou6AAppBuilder\TheCheeseLibrary\TheCheeseLibrary.iml" filepath="C:\Users\Naetirat\AndroidStudioProjects\Project\Trueyou6AAppBuilder\TheCheeseLibrary\TheCheeseLibrary.iml" />
       <module fileurl="file://C:\Users\army2102\StudioProjects\TrueAppBuilder\Trueyou6AAppBuilder\Trueyou6A.iml" filepath="C:\Users\army2102\StudioProjects\TrueAppBuilder\Trueyou6AAppBuilder\Trueyou6A.iml" />
       <module fileurl="file://$PROJECT_DIR$/Trueyou6AAppBuilder.iml" filepath="$PROJECT_DIR$/Trueyou6AAppBuilder.iml" />
+      <module fileurl="file://C:\Users\Naetirat\AndroidStudioProjects\Project\Trueyou6AAppBuilder\Trueyou6AAppBuilder.iml" filepath="C:\Users\Naetirat\AndroidStudioProjects\Project\Trueyou6AAppBuilder\Trueyou6AAppBuilder.iml" />
       <module fileurl="file://C:\Users\Naetirat\AndroidStudioProjects\TrueAndroidAppbuilder\Trueyou6A\Trueyou6AAppBuilder.iml" filepath="C:\Users\Naetirat\AndroidStudioProjects\TrueAndroidAppbuilder\Trueyou6A\Trueyou6AAppBuilder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Naetirat\AndroidStudioProjects\Project\Trueyou6AAppBuilder\app\app.iml" filepath="C:\Users\Naetirat\AndroidStudioProjects\Project\Trueyou6AAppBuilder\app\app.iml" />
     </modules>
   </component>
 </project>
